@@ -46,7 +46,7 @@ public class AppScript : MonoBehaviour
                 if (gamesPlayed == 0)
                 {
                     //PLAY THE CUPCAKE GAME
-                    UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation);
+                    UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation); 
                     //TODO: trigger the start of the cupcake minigame
 
                 }
