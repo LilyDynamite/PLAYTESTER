@@ -83,11 +83,13 @@ public class AppScript : MonoBehaviour
                 {
                     //player has finished day 3
                     //TODO: trigger an ending here
+                    UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0, 0, -2), "You beat the game! Text here depends on your score.");
                 }
                 else
                 {
                     //TODO: add anything fancy we want to happen transition wise, maybe make popup appear or fade to black
                     GameManager.GetComponent<GameManagerScript>().CompletedDay();
+                    UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0, 0, -2), "Welcome to another day of work!");
                 }
 
             }
