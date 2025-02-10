@@ -24,7 +24,7 @@ public class GameManagerScript : MonoBehaviour
         UIController = GameObject.Find("UI Controller");
 
         // DEBUG: make a popup appear
-        UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0,0,-2), "Hi test:)");
+        UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0,0,-2), "This is a popup! It can also be closed");
 
     }
 
@@ -37,9 +37,11 @@ public class GameManagerScript : MonoBehaviour
     // Advances the minigame counter and changes the HP bar
     public void CompletedMinigame(int scoreChange)
     {
-        HP += scoreChange;
+        Debug.Log("Completed minigame was called");
 
         minigamesPlayed += 1;
+
+        HP += scoreChange;
 
         //Make sure HP is within bounds
         if (HP > 100)

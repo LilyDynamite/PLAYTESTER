@@ -9,12 +9,16 @@ public class AppScript : MonoBehaviour
     public Vector3 myScreenLocation = new Vector3(0, 0, -10); //position for this app to go when clicked
     GameObject UIController;
     GameObject GameManager;
+    GameObject CupcakeGameManager;
+    GameObject CoinGameManager;
+    GameObject DuckGameManager;
     public bool canBeClicked;
     public bool isMinigameButton = false; //Special case for the play minigame button
     public bool isClockOutButton = false; //Special case for the clock out button
     private Vector3 cupcakeGameLocation = new Vector3(50, 50, -10);
-    private Vector3 subwayGameLocation = new Vector3(50, 35, -10);
+    private Vector3 coinGameLocation = new Vector3(50, 35, -10);
     private Vector3 duckGameLocation = new Vector3(50, 20, -10);
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,9 @@ public class AppScript : MonoBehaviour
         //Set Variables        
         UIController = GameObject.Find("UI Controller");
         GameManager = GameObject.Find("Game Manager");
+        CupcakeGameManager = GameObject.Find("CupcakeGameManager");
+        CoinGameManager = GameObject.Find("MinigameManager");
+        DuckGameManager = GameObject.Find("DuckGameManager");
         canBeClicked = true; //true by default
 }
 
@@ -46,21 +53,26 @@ public class AppScript : MonoBehaviour
                 if (gamesPlayed == 0)
                 {
                     //PLAY THE CUPCAKE GAME
-                    UIController.GetComponent<ComputerUIScript>().GoToPosition(duckGameLocation); // cupcakeGameLocation
-                    //TODO: trigger the start of the cupcake minigame
+                    UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation); // cupcakeGameLocation
+
+                    //trigger the start of the cupcake minigame
+                    CupcakeGameManager.GetComponent<CupcakeGameManager>().StartCupcakeMinigame();
 
                 }
                 else if (gamesPlayed == 1)
                 {
-                    //PLAY THE SUBWAY SURFERS GAME
-                    UIController.GetComponent<ComputerUIScript>().GoToPosition(subwayGameLocation);
-                    //TODO: trigger the start of the subway surfers minigame
+                    //PLAY THE COIN RUNNER GAME
+                    UIController.GetComponent<ComputerUIScript>().GoToPosition(coinGameLocation);
+                    //trigger the start of the coin minigame
+                    CoinGameManager.GetComponent<MinigameManager>().StartCoinMinigame();
                 }
                 else
                 {
                     //PLAY THE DUCK GAME
                     UIController.GetComponent<ComputerUIScript>().GoToPosition(duckGameLocation);
-                    //TODO: trigger the start of the duck minigame
+                    //trigger the start of the duck minigame
+                    DuckGameManager.GetComponent<DuckGameManager>().StartDuckMinigame();
+
                 }
 
             }
@@ -74,7 +86,7 @@ public class AppScript : MonoBehaviour
                 }
                 else
                 {
-                    //TODO: add anything fancy we want to happen transition wise, maybe make popup appear
+                    //TODO: add anything fancy we want to happen transition wise, maybe make popup appear or fade to black
                     GameManager.GetComponent<GameManagerScript>().CompletedDay();
                 }
 

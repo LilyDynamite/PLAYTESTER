@@ -11,7 +11,7 @@ public class CupcakeMovement : MonoBehaviour
     //public TMP_Text scoreText; //score text
     //public int scorePoints=0;
 
-    public GameManager GameManager;
+    private CupcakeGameManager GameManager;
 
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class CupcakeMovement : MonoBehaviour
 
     void Awake() 
     {
-        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GameManager = GameObject.Find("CupcakeGameManager").GetComponent<CupcakeGameManager>();
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class CupcakeMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){  
-    // collider check if it hits the ground or people
+        // collider check if it hits the ground or people
         if(collision.gameObject.tag == "Ground") 
         {  
             Destroy(gameObject);
@@ -40,8 +40,11 @@ public class CupcakeMovement : MonoBehaviour
         if (collision.gameObject.tag == "Person")
         {
             GameManager.AddPoints(1);
-            //scorePoints += 1;
-            //scoreText.text = "Score:"+scorePoints.ToString();
+
+            //decrease total enemies on screen
+            GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().KilledEnemy();
+
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

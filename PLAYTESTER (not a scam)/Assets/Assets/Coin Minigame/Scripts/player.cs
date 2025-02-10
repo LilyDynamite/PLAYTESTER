@@ -15,9 +15,12 @@ public class player : MonoBehaviour
     UnityEngine.Color colorOne = new UnityEngine.Color(1f, 1f, 0f, 1f); // yellow
     UnityEngine.Color colorTwo = new UnityEngine.Color(0.5f, 0f, 0.5f, 1f); // purple
 
+    MinigameManager CoinGameManager;
+
     void Start()
     {
         sfx = GetComponent<AudioSource>();
+        CoinGameManager = GameObject.Find("MinigameManager").GetComponent<MinigameManager>();
     }
 
     void Update()
@@ -55,26 +58,31 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("spawnable"))
+        if(CoinGameManager.IsGameOver() == false)
         {
-            SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
+            if (other.CompareTag("spawnable"))
+            {
+                SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
 
-            if (spriteRenderer.color == colorOne) // The spawnable touched adds points
-            {
-                points += 1; 
-            } else // Otherwise it is a spawnable that takes away points
-            {
-                points -= 1;
-            }
-            pointsText.text = "Points: " + points;
-            
-            if (sfx != null)
-            {
-                Debug.Log("play!"); 
-                sfx.Play(); // Play sound effect
-            }
+                if (spriteRenderer.color == colorOne) // The spawnable touched adds points
+                {
+                    CoinGameManager.AddPoints(1);
+                }
+                else // Otherwise it is a spawnable that takes away points
+                {
+                    CoinGameManager.AddPoints(-1);
+                }
+                pointsText.text = "Points: " + points;
 
-            Destroy(other.gameObject); 
+                if (sfx != null)
+                {
+                    Debug.Log("play!");
+                    sfx.Play(); // Play sound effect
+                }
+
+                Destroy(other.gameObject);
+            }
         }
+        
     }
 }

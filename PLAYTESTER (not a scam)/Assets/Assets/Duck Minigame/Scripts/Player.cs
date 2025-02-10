@@ -8,22 +8,29 @@ public class Player : MonoBehaviour
     public LayerMask interactableLayer;
     public DuckGameManager duckGameManager;
 
+    void Start()
+    {
+        duckGameManager = GameObject.Find("DuckGameManager").GetComponent<DuckGameManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        crosshairSprite.transform.position = mousePos;
+        if (duckGameManager.gameOver == false)
+        { 
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            crosshairSprite.transform.position = mousePos;
 
-        if (Input.GetMouseButtonDown(0)) // Left click
-        {
-            DetectObjectUnderCrosshair(mousePos);
+            if (Input.GetMouseButtonDown(0)) // Left click
+            {
+                DetectObjectUnderCrosshair(mousePos);
+            }
         }
     }
 
     void DetectObjectUnderCrosshair(Vector2 mousePos)
     {
         Collider2D hit = Physics2D.OverlapPoint(mousePos, interactableLayer);
-        Debug.Log(hit);
         if (hit != null)
         {
             // If the crosshair is over something, perform actions (like hitting a duck or trash)

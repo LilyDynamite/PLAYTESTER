@@ -11,15 +11,24 @@ public class spawnMg : MonoBehaviour
     Color colorOne = new Color(1f, 1f, 0f, 1f); // Yellow
     Color colorTwo = new Color(0.5f, 0f, 0.5f, 1f); // Purple
 
+    private MinigameManager gameManager;
+
     void Start()
+    {
+        gameManager = GameObject.Find("MinigameManager").GetComponent<MinigameManager>();
+    }
+
+    public void SpawnMgStart()
     {
         StartCoroutine(SpawnObjects());
     }
 
     IEnumerator SpawnObjects()
     {
-        while (true)
+        Debug.Log("entered the spawn objects call at all");
+        while (!gameManager.IsGameOver())
         {
+            Debug.Log("entered while loop");
             yield return new WaitForSeconds(spawnInterval); // Make spawnables every x seconds
 
             int slotOne = Random.Range(0, spawnPos.Length);

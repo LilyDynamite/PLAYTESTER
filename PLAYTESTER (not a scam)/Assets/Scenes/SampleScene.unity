@@ -846,7 +846,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320443651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.84172}
   m_Children: []
   m_Father: {fileID: 1595438046}
@@ -854,8 +854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 9.4003, y: -5}
-  m_SizeDelta: {x: 18.199356, y: 10}
+  m_AnchoredPosition: {x: 9.468, y: -5.1978}
+  m_SizeDelta: {x: 18.063118, y: 9.60434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320443653
 MonoBehaviour:
@@ -1726,7 +1726,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3159,7 +3159,7 @@ GameObject:
   - component: {fileID: 996181061}
   - component: {fileID: 996181060}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: CupcakeGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3179,10 +3179,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glitchFrequency: 0.5
   glitchRestTime: 1.5
-  gameDuration: 30
+  gameDuration: 15
   scoreText: {fileID: 320443653}
   scorePoints: 0
   timerText: {fileID: 1894740861}
+  timeRemaining: 0
+  gamePlaying: 0
 --- !u!4 &996181061
 Transform:
   m_ObjectHideFlags: 0
@@ -3240,7 +3242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008427762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 47.6, y: 22.1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1817397881}
@@ -4950,6 +4952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 137213159}
+  gameOver: 0
+  gameDuration: 15
 --- !u!4 &1471116593
 Transform:
   m_ObjectHideFlags: 0
@@ -5483,7 +5487,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595438042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 320443652}
@@ -5884,6 +5888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   person: {fileID: 1940733105284932544, guid: fa732fa53a206114cb18416091e8cd6f, type: 3}
   numEnemies: 12
+  playCupcakeMinigame: 0
 --- !u!4 &1636105561
 Transform:
   m_ObjectHideFlags: 0
@@ -6393,7 +6398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glitchFreq: 0.5
   glitchWaitTime: 1
-  gameDur: 30
+  gameDur: 15
   timerText: {fileID: 1396497652}
   playerRenderer: {fileID: 1455379864}
   glitchPlayerColor: {r: 1, g: 0, b: 1, a: 1}
@@ -6802,7 +6807,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -7190,7 +7195,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894740859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1595438046}
@@ -7198,8 +7203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.95, y: -5}
-  m_SizeDelta: {x: 18.503746, y: 9.999947}
+  m_AnchoredPosition: {x: -8.8117, y: -5}
+  m_SizeDelta: {x: 17.623375, y: 9.208679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894740861
 MonoBehaviour:
@@ -8025,6 +8030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cupcake: {fileID: 8662074612052584715, guid: dcc6995cab8a1b74eaa30ad4c5ab33e7, type: 3}
   speed: 5
+  playCupcakeMinigame: 0
 --- !u!4 &2033651213
 Transform:
   m_ObjectHideFlags: 0

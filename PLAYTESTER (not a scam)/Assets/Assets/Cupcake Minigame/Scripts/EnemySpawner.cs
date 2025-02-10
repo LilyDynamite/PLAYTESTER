@@ -10,25 +10,37 @@ public class EnemySpawner : MonoBehaviour
     private int currentNumEnemies;
     private float waitTime;
 
+    public bool playCupcakeMinigame; //turned to true by the cupcake game manager script
 
     // Start is called before the first frame update
     void Start()
     {
+        playCupcakeMinigame = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //spawn enemies after each spawn wait time with a max amount of people
-        waitTime-=Time.deltaTime;
-        if (waitTime<=0 && currentNumEnemies<numEnemies){
-            Instantiate(person,transform.position,Quaternion.identity);
-            setSpawnTime();
-            currentNumEnemies++;
+        if (playCupcakeMinigame)
+        {
+            //spawn enemies after each spawn wait time with a max amount of people
+            waitTime -= Time.deltaTime;
+            if (waitTime <= 0 && currentNumEnemies < numEnemies)
+            {
+                Instantiate(person, transform.position, Quaternion.identity);
+                setSpawnTime();
+                currentNumEnemies++;
+            }
         }
     }
 
     void setSpawnTime(){
         waitTime=Random.Range(0.5f,3.0f);
+    }
+
+    public void KilledEnemy()
+    {
+        currentNumEnemies--;
+        return;
     }
 }

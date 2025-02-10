@@ -11,9 +11,12 @@ public class SpawnManager : MonoBehaviour
     public float showInterval = 1f; // Time spawnable will show up for
     public int spawnablesPerTime = 3; // Number of spawnables that will spawnable each time
 
+    DuckGameManager duckGameManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        duckGameManager = GameObject.Find("DuckGameManager").GetComponent<DuckGameManager>();
         StartCoroutine(SpawnItems());
     }
 
