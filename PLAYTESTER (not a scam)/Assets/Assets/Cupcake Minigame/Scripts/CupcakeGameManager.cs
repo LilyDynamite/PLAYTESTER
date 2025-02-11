@@ -21,6 +21,10 @@ public class CupcakeGameManager : MonoBehaviour
     private bool gameOver;
     public bool gamePlaying;
 
+    private int timesPlayed;
+
+    public ComputerUIScript UIController;
+
     //glitches - through frequency will show glitches 
     //have problem i dont know how to add the prefab sprite renderer :(
     // public SpriteRenderer cupcakeRenderer;
@@ -32,6 +36,9 @@ public class CupcakeGameManager : MonoBehaviour
     void Start()
     {
         gamePlaying = false;
+        timesPlayed = 0;
+
+        UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>();
     }
 
     //This is the function that will be called by the AppScript script. It should contain
@@ -41,6 +48,7 @@ public class CupcakeGameManager : MonoBehaviour
 
         gameOver = false;
         gamePlaying = true;
+        timesPlayed++;
 
         scorePoints = 0;
 
@@ -56,6 +64,12 @@ public class CupcakeGameManager : MonoBehaviour
         
         //set the timer for the game
         timeRemaining = gameDuration;
+
+        //If it is the first time playing, tutorial popup
+        if(timesPlayed == 1)
+        {
+            UIController.TriggerPopup(new Vector3(50, 50, -5), "Use the arrow keys to move and space to drop.");
+        }
 
     }
 

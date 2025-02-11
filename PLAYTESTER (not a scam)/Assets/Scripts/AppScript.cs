@@ -48,6 +48,10 @@ public class AppScript : MonoBehaviour
             if (isMinigameButton)
             {
                 //play the next relevant minigame
+
+                //Tell the game manager we are in a game
+                GameManager.GetComponent<GameManagerScript>().StartedMinigame();
+
                 int gamesPlayed = GameManager.GetComponent<GameManagerScript>().GetMinigamesPlayed();
 
                 if (gamesPlayed == 0)
