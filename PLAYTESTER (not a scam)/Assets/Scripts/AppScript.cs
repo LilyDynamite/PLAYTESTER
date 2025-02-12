@@ -18,6 +18,7 @@ public class AppScript : MonoBehaviour
     private Vector3 cupcakeGameLocation = new Vector3(50, 50, -10);
     private Vector3 coinGameLocation = new Vector3(50, 35, -10);
     private Vector3 duckGameLocation = new Vector3(50, 20, -10);
+    private Vector3 EMPLocation = new Vector3(0, -15, -10);
 
 
     // Start is called before the first frame update
@@ -57,10 +58,24 @@ public class AppScript : MonoBehaviour
                 if (gamesPlayed == 0)
                 {
                     //PLAY THE CUPCAKE GAME
-                    UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation); // cupcakeGameLocation
 
-                    //trigger the start of the cupcake minigame
-                    CupcakeGameManager.GetComponent<CupcakeGameManager>().StartCupcakeMinigame();
+                    if (GameManager.GetComponent<GameManagerScript>().GetDay() == 2 && GameManager.GetComponent<GameManagerScript>().EMPHappened == false)
+                    {
+                        //We should do the EMP scene instead since it's day 2 and we haven't done it yet
+                        GameManager.GetComponent<GameManagerScript>().EMPHappened = true;
+                        UIController.GetComponent<ComputerUIScript>().GoToPosition(EMPLocation);
+
+
+                    }
+                    else
+                    {
+                        //Go into the cupcake game as normal
+
+                        UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation);
+
+                        //trigger the start of the cupcake minigame
+                        CupcakeGameManager.GetComponent<CupcakeGameManager>().StartCupcakeMinigame();
+                    }
 
                 }
                 else if (gamesPlayed == 1)

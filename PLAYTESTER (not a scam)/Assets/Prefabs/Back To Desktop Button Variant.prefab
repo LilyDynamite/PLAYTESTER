@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2213119004800428331, guid: 47003a35ff8a5a34cb996f822ed28f12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 24cf210708c57674b894af3341b1738b,
+        type: 3}
     - target: {fileID: 3089632284252778129, guid: 47003a35ff8a5a34cb996f822ed28f12,
         type: 3}
       propertyPath: myScreenLocation.x
@@ -21,6 +27,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Back To Desktop Button Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089632284252778133, guid: 47003a35ff8a5a34cb996f822ed28f12,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089632284252778133, guid: 47003a35ff8a5a34cb996f822ed28f12,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 3089632284252778134, guid: 47003a35ff8a5a34cb996f822ed28f12,
         type: 3}
