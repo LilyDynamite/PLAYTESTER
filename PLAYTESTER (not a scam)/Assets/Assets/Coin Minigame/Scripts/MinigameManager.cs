@@ -27,7 +27,7 @@ public class MinigameManager : MonoBehaviour
     public Color glitchPlayerColor = new Color(1f, 0f, 1f, 1f); // aMgenta
     private Color normalPlayerColor;
 
-    private int points;
+    public int points;
 
     void Start()
     {

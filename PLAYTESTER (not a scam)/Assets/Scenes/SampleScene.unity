@@ -2511,7 +2511,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -4229,7 +4229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glitchFrequency: 0.5
   glitchRestTime: 1.5
-  gameDuration: 25
+  gameDuration: 5
   scoreText: {fileID: 320443653}
   scorePoints: 0
   timerText: {fileID: 1894740861}
@@ -7299,7 +7299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 137213159}
   gameOver: 0
-  gameDuration: 25
+  gameDuration: 5
 --- !u!4 &1471116593
 Transform:
   m_ObjectHideFlags: 0
@@ -9456,10 +9456,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glitchFreq: 0.5
   glitchWaitTime: 1
-  gameDur: 25
+  gameDur: 12
   timerText: {fileID: 1396497652}
   playerRenderer: {fileID: 1455379864}
   glitchPlayerColor: {r: 1, g: 0, b: 1, a: 1}
+  points: 0
 --- !u!224 &1745545158
 RectTransform:
   m_ObjectHideFlags: 0

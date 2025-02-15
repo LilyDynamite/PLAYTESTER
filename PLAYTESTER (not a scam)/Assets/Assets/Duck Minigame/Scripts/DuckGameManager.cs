@@ -16,6 +16,7 @@ public class DuckGameManager : MonoBehaviour
     void Start()
     {
         gameOver = true;
+        score = 0;
         UpdateScoreText();
         UIController = GameObject.Find("UI Controller");
        
@@ -54,7 +55,11 @@ public class DuckGameManager : MonoBehaviour
 
         //Go to the leaderboard
         UIController.GetComponent<ComputerUIScript>().GoToPosition(new Vector3(90, 20, -10)); //go to the leaderboard
+
+        score = 0;
+        UpdateScoreText();
     }
+
 
     // Method to add or subtract points
     public void AddPoints(int points)

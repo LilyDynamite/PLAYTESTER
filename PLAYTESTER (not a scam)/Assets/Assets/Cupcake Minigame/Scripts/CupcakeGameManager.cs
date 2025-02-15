@@ -51,6 +51,7 @@ public class CupcakeGameManager : MonoBehaviour
         timesPlayed++;
 
         scorePoints = 0;
+        UpdateScoreText();
 
         //normalcupcakeColor = cupcakeRenderer.color;
         timerText.text = "Time Left: " + gameDuration.ToString();

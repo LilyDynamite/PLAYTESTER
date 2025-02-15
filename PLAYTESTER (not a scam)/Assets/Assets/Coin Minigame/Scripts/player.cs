@@ -76,7 +76,6 @@ public class player : MonoBehaviour
 
                 if (sfx != null)
                 {
-                    Debug.Log("play!");
                     sfx.Play(); // Play sound effect
                 }
 
