@@ -8,11 +8,16 @@ public class playerMovement : MonoBehaviour
     public float speed = 1.85f;
     private float waitTime = 0.0f;
     public bool playCupcakeMinigame; //turned to true by the cupcake game manager script
+    AudioSource sfxDrop;
 
     // Start is called before the first frame update
     void Start()
     {
         playCupcakeMinigame = false;
+    }
+
+    void Awake() { 
+        sfxDrop=GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +37,7 @@ public class playerMovement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space) && waitTime <= 0.0f)
             {
+                sfxDrop.Play();
                 Instantiate(cupcake, transform.position, Quaternion.identity);
                 waitTime = 1.5f;
             }
