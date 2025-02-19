@@ -7,6 +7,7 @@ public class CupcakeMovement : MonoBehaviour
 {
     
     [SerializeField] public float speed = 0.7f;
+    private AudioSource sfxYay;
     //I cant for some reason put the timer in the text idk if it is because it is a prefab or im dumb 
     //public TMP_Text scoreText; //score text
     //public int scorePoints=0;
@@ -22,6 +23,7 @@ public class CupcakeMovement : MonoBehaviour
 
     void Awake() 
     {
+        sfxYay = GetComponent<AudioSource>();
         GameManager = GameObject.Find("CupcakeGameManager").GetComponent<CupcakeGameManager>();
     }
 
@@ -39,18 +41,21 @@ public class CupcakeMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Person")
         {
+            if (sfxYay != null)
+            {
+                sfxYay.Play();
+            }
             GameManager.AddPoints(1);
-
+            
             //decrease total enemies on screen
             GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().KilledEnemy();
-
-
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+
+            
         }
 
     
     }
-
 
 }
