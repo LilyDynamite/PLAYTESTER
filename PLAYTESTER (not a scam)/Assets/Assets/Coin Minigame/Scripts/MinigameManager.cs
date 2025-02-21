@@ -29,7 +29,8 @@ public class MinigameManager : MonoBehaviour
     public AudioClip glitchedSFX;
 
     // bg1, bg2 
-
+    // public SpriteRenderer bg1Renderer;
+    // public SpriteRenderer bg2Renderer;
     // Good spawnable
   
     // For now, just player color will change
