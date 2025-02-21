@@ -72,7 +72,7 @@ public class AppScript : MonoBehaviour
                         //Go into the cupcake game as normal
 
                         UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation);
-
+                        Debug.Log("In Cupcake Minigame");
                         //trigger the start of the cupcake minigame
                         CupcakeGameManager.GetComponent<CupcakeGameManager>().StartCupcakeMinigame();
                     }

@@ -11,7 +11,7 @@ public class player : MonoBehaviour
     private int curLane = 1; // middle lane
     public TMP_Text pointsText;
     private int points = 0;
-    private AudioSource sfx;
+    // private AudioSource sfx;
     UnityEngine.Color colorOne = new UnityEngine.Color(1f, 1f, 0f, 1f); // yellow
     UnityEngine.Color colorTwo = new UnityEngine.Color(0.5f, 0f, 0.5f, 1f); // purple
 
@@ -19,7 +19,7 @@ public class player : MonoBehaviour
 
     void Start()
     {
-        sfx = GetComponent<AudioSource>();
+        // sfx = GetComponent<AudioSource>();
         CoinGameManager = GameObject.Find("MinigameManager").GetComponent<MinigameManager>();
     }
 
@@ -74,9 +74,10 @@ public class player : MonoBehaviour
                 }
                 pointsText.text = "Points: " + points;
 
-                if (sfx != null)
+                // Play the assigned sound effect from MinigameManager
+                if (CoinGameManager != null && CoinGameManager.sfx != null)
                 {
-                    sfx.Play(); // Play sound effect
+                    CoinGameManager.sfx.Play(); // Play sound effect
                 }
 
                 Destroy(other.gameObject);
