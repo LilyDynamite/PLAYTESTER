@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|c:\\users\\miche\\playtester\\playtester (not a scam)\\assets\\assets\\coin minigame\\scripts\\minigamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\coin minigame\\scripts\\minigamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|c:\\users\\miche\\playtester\\playtester (not a scam)\\assets\\assets\\cupcake minigame\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\cupcake minigame\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\cupcake minigame\\scripts\\cupcakemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\cupcake minigame\\scripts\\cupcakemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|c:\\users\\miche\\playtester\\playtester (not a scam)\\assets\\assets\\coin minigame\\scripts\\spawnmg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\coin minigame\\scripts\\spawnmg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\coin minigame\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\coin minigame\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\duck minigame\\scripts\\spawnmanagerfast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\duck minigame\\scripts\\spawnmanagerfast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\cupcake minigame\\scripts\\cupcakemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\cupcake minigame\\scripts\\cupcakemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\duck minigame\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\duck minigame\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|c:\\users\\miche\\playtester\\playtester (not a scam)\\assets\\assets\\coin minigame\\scripts\\minigamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\coin minigame\\scripts\\minigamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\scripts\\gamemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|c:\\users\\miche\\playtester\\playtester (not a scam)\\assets\\assets\\coin minigame\\scripts\\spawnable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\coin minigame\\scripts\\spawnable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\scripts\\appscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\appscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\cupcake minigame\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\cupcake minigame\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\assets\\assets\\duck minigame\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{548880D0-CE1B-082E-6B94-80A99DC88EB8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\duck minigame\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,32 +46,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "spawnable.cs",
+              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\spawnable.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Coin Minigame\\Scripts\\spawnable.cs",
+              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\spawnable.cs",
+              "RelativeToolTip": "Assets\\Assets\\Coin Minigame\\Scripts\\spawnable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T20:49:28.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "spawnMg.cs",
+              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\spawnMg.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Coin Minigame\\Scripts\\spawnMg.cs",
+              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\spawnMg.cs",
+              "RelativeToolTip": "Assets\\Assets\\Coin Minigame\\Scripts\\spawnMg.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T20:29:17.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Scripts\\GameManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagerScript.cs",
+              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Scripts\\GameManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManagerScript.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAGQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T17:38:36.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MinigameManager.cs",
               "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\MinigameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Coin Minigame\\Scripts\\MinigameManager.cs",
               "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\MinigameManager.cs",
               "RelativeToolTip": "Assets\\Assets\\Coin Minigame\\Scripts\\MinigameManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T16:58:32.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "playerMovement.cs",
-              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
-              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
-              "RelativeToolTip": "Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwCcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T23:03:14.941Z",
               "EditorCaption": ""
             },
             {
@@ -76,43 +110,21 @@
               "RelativeToolTip": "Assets\\Assets\\Cupcake Minigame\\Scripts\\CupcakeMovement.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAswCkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T22:32:31.358Z"
+              "WhenOpened": "2025-02-19T22:32:31.358Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SpawnManagerFast.cs",
-              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManagerFast.cs",
-              "RelativeDocumentMoniker": "Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManagerFast.cs",
-              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManagerFast.cs",
-              "RelativeToolTip": "Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManagerFast.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAEAAAAB0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T04:41:41.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "player.cs",
               "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\player.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Coin Minigame\\Scripts\\player.cs",
               "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Coin Minigame\\Scripts\\player.cs",
               "RelativeToolTip": "Assets\\Assets\\Coin Minigame\\Scripts\\player.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAgwA0AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T04:38:33.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SpawnManager.cs",
-              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
-              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
-              "RelativeToolTip": "Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAIBJwD8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T04:36:47.781Z"
+              "WhenOpened": "2025-02-08T04:38:33.309Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -122,9 +134,33 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\AppScript.cs",
               "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Scripts\\AppScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\AppScript.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T15:54:10.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "playerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
+              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
+              "RelativeToolTip": "Assets\\Assets\\Cupcake Minigame\\Scripts\\playerMovement.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwCcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T23:03:14.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SpawnManager.cs",
+              "DocumentMoniker": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
+              "ToolTip": "C:\\Users\\miche\\PLAYTESTER\\PLAYTESTER (not a scam)\\Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
+              "RelativeToolTip": "Assets\\Assets\\Duck Minigame\\Scripts\\SpawnManager.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAIBJwD8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T04:36:47.781Z"
             }
           ]
         }

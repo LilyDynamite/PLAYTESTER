@@ -5,11 +5,13 @@ using UnityEngine;
 public class spawnMg : MonoBehaviour
 {
     public GameObject spawnable;
+    public Sprite coin;
+    public Sprite evilCoin;
     public Transform[] spawnPos;
     public float spawnInterval = 1.5f;
     public float speed = 2f;
-    Color colorOne = new Color(1f, 1f, 0f, 1f); // Yellow
-    Color colorTwo = new Color(0.5f, 0f, 0.5f, 1f); // Purple
+    // Color colorOne = new Color(1f, 1f, 0f, 1f); // Yellow
+    // Color colorTwo = new Color(0.5f, 0f, 0.5f, 1f); // Purple
 
     private MinigameManager gameManager;
 
@@ -38,16 +40,28 @@ public class spawnMg : MonoBehaviour
                 slotTwo = Random.Range(0, spawnPos.Length);
             } while (slotTwo == slotOne); // Ensure the slots are different
 
-            Spawn(spawnPos[slotOne], colorOne); // This will be the good coin
-            Spawn(spawnPos[slotTwo], colorTwo); // This will be the bad coin
+            Spawn(spawnPos[slotOne], coin, null); // This will be the good coin
+            Spawn(spawnPos[slotTwo], null, evilCoin); // This will be the bad coin
         }
     }
 
-    void Spawn(Transform spawnPos, Color color)
+    void Spawn(Transform spawnPos, Sprite coinSprite, Sprite evilCoinSprite)
     {
         GameObject newSpawnable = Instantiate(spawnable, spawnPos.position, Quaternion.identity); // Make the spawnable
 
         SpriteRenderer spriteRenderer = newSpawnable.GetComponent<SpriteRenderer>(); // Access the spawnable's color
-        spriteRenderer.color = color; // Change the spawnable's color
+        // spriteRenderer.color = color; // Change the spawnable's color
+        
+        if (coinSprite != null)
+        {
+            spriteRenderer.sprite = coinSprite;
+            newSpawnable.tag = "Coin";
+            Debug.Log("Spawned a Coin with tag: " + newSpawnable.tag); // Debugging
+        } else if (evilCoinSprite != null)
+        {
+            spriteRenderer.sprite = evilCoinSprite;
+            newSpawnable.tag = "EvilCoin";
+            Debug.Log("Spawned an Evil Coin with tag: " + newSpawnable.tag); // Debugging
+        }
     }
 }

@@ -9175,6 +9175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnable: {fileID: 5215108846132524561, guid: cf1e02fa74fb8c74ba8c1f0e9e6221ac,
     type: 3}
+  coin: {fileID: 21300000, guid: 67226d379323bac4ea5d56051abc588a, type: 3}
+  evilCoin: {fileID: 21300000, guid: 582ae1fe0f4f5ec4ab9f761d48009918, type: 3}
   spawnPos:
   - {fileID: 1665026447}
   - {fileID: 346577288}
@@ -9533,6 +9535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755187668}
   - component: {fileID: 1755187667}
+  - component: {fileID: 1755187669}
   m_Layer: 0
   m_Name: Lane2
   m_TagString: Untagged
@@ -9604,6 +9607,25 @@ Transform:
   m_Father: {fileID: 1386187746}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1755187669
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755187666}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c4045fd49690f3499784d65237b43ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1763967562
 PrefabInstance:
   m_ObjectHideFlags: 0

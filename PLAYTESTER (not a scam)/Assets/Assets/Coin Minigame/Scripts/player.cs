@@ -11,9 +11,9 @@ public class player : MonoBehaviour
     private int curLane = 1; // middle lane
     public TMP_Text pointsText;
     private int points = 0;
-    // private AudioSource sfx;
-    UnityEngine.Color colorOne = new UnityEngine.Color(1f, 1f, 0f, 1f); // yellow
-    UnityEngine.Color colorTwo = new UnityEngine.Color(0.5f, 0f, 0.5f, 1f); // purple
+
+    // UnityEngine.Color colorOne = new UnityEngine.Color(1f, 1f, 0f, 1f); // yellow
+    // UnityEngine.Color colorTwo = new UnityEngine.Color(0.5f, 0f, 0.5f, 1f); // purple
 
     MinigameManager CoinGameManager;
 
@@ -58,31 +58,56 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(CoinGameManager.IsGameOver() == false)
+        if (CoinGameManager.IsGameOver() == false)
         {
-            if (other.CompareTag("spawnable"))
+            if (other.CompareTag("Coin"))
             {
-                SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
-
-                if (spriteRenderer.color == colorOne) // The spawnable touched adds points
-                {
-                    CoinGameManager.AddPoints(1);
-                }
-                else // Otherwise it is a spawnable that takes away points
-                {
-                    CoinGameManager.AddPoints(-1);
-                }
-                pointsText.text = "Points: " + points;
-
-                // Play the assigned sound effect from MinigameManager
-                if (CoinGameManager != null && CoinGameManager.sfx != null)
-                {
-                    CoinGameManager.sfx.Play(); // Play sound effect
-                }
-
-                Destroy(other.gameObject);
+                CoinGameManager.AddPoints(1);
+                Debug.Log("+1 point");
+            } else if (other.CompareTag("EvilCoin"))
+            {
+                CoinGameManager.AddPoints(-1);
+                Debug.Log("-1 point");
             }
+                
+            // Play the assigned sound effect from MinigameManager
+            if (CoinGameManager != null && CoinGameManager.sfx != null)
+            {
+                CoinGameManager.sfx.Play(); // Play sound effect
+            }
+
+            Destroy(other.gameObject);
+            
         }
-        
+
     }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if(CoinGameManager.IsGameOver() == false)
+    //    {
+    //        if (other.CompareTag("spawnable"))
+    //        {
+    //            SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
+
+    //            if (spriteRenderer.color == colorOne) // The spawnable touched adds points
+    //            {
+    //                CoinGameManager.AddPoints(1);
+    //            }
+    //            else // Otherwise it is a spawnable that takes away points
+    //            {
+    //                CoinGameManager.AddPoints(-1);
+    //            }
+    //            pointsText.text = "Points: " + points;
+
+    //            // Play the assigned sound effect from MinigameManager
+    //            if (CoinGameManager != null && CoinGameManager.sfx != null)
+    //            {
+    //                CoinGameManager.sfx.Play(); // Play sound effect
+    //            }
+
+    //            Destroy(other.gameObject);
+    //        }
+    //    }
+
+    //}
 }
