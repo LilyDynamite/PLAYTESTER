@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Kino;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -10,21 +11,30 @@ public class MinigameManager : MonoBehaviour
     GameObject MainGameManager;
 
     // Manages glitches 
-    public float glitchFreq = 0.5f; // Set based on the day and situation
+    public float glitchFreq = 0.3f; // Set based on the day and situation
     public float glitchWaitTime = 1f;
     public float gameDur = 5f;
+
+    // kino effect
+    public DigitalGlitch GlitchEffect;
+    public AnalogGlitch AnalogGlitchEffect;
 
     // Timer management 
     public TMP_Text timerText;
     private bool isGameOver;
 
-    
+    // Audio management
+    public AudioSource sfx;
+    public AudioClip normalSFX;
+    public AudioClip glitchedSFX;
+
     // bg1, bg2 
+
     // Good spawnable
-    // Audio
+  
     // For now, just player color will change
     public SpriteRenderer playerRenderer;
-    public Color glitchPlayerColor = new Color(1f, 0f, 1f, 1f); // aMgenta
+    public Color glitchPlayerColor = new Color(0f, 0f, 0f, 1f); // Black
     private Color normalPlayerColor;
 
     public int points;
@@ -34,7 +44,13 @@ public class MinigameManager : MonoBehaviour
         UIController = GameObject.Find("UI Controller");
         MainGameManager = GameObject.Find("Game Manager");
         SpawnMg = GameObject.Find("SpawnMg");
+
+        // SFX
+        sfx = GetComponent<AudioSource>();
+        sfx.clip = normalSFX;
+
         normalPlayerColor = playerRenderer.color; // Set starting color as player's uncorrupted color
+
         isGameOver = true;
         points = 0;
 
@@ -68,14 +84,23 @@ public class MinigameManager : MonoBehaviour
     IEnumerator ActivateGlitch()
     {
         // Apply glitch effects
+        // Kino effect
+        GlitchEffect.intensity = Random.Range(0f, 0.3f); // can adjust
+        AnalogGlitchEffect.colorDrift = Random.Range(0f, 0.3f);
+
         playerRenderer.color = glitchPlayerColor;
-      
+        sfx.clip = glitchedSFX;
+
         yield return new WaitForSeconds(1f); // Glitch lasts 1 second
+        GlitchEffect.intensity = 0;
+        AnalogGlitchEffect.colorDrift = 0;
+
 
         // Revert to normal if the glitch frequency isn't 100%
         if (glitchFreq != 1)
         {
            playerRenderer.color = normalPlayerColor;
+           sfx.clip = normalSFX;
         }
       
     }

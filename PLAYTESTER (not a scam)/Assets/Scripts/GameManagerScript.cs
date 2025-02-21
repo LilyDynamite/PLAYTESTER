@@ -13,6 +13,7 @@ public class GameManagerScript : MonoBehaviour
     
     private GameObject Bar;
     public AudioSource MusicPlayer;
+    public AudioSource GlitchMusicPlayer; // Both musicPlayer and glitchMusicPlayer will play, but one will be muted depending on glitch frequency
     private GameObject UIController;
 
     //All audio tracks (sound effects are handled in their minigames but the minigame music is
@@ -21,6 +22,11 @@ public class GameManagerScript : MonoBehaviour
     public AudioClip cupcakeTrack;
     public AudioClip coinTrack;
     public AudioClip duckTrack;
+    public AudioClip glitchedCoinTrack;
+    public bool isGlitchActive = false;
+    public float glitchDuration = 1.0f;
+    private float glitchCooldown = 1f; // Cooldown for glitch check (1 second)
+    private float glitchCooldownTimer = 0f; // Timer for cooldown
 
     //All news text slots
     private TMPro.TextMeshProUGUI ValText1;
@@ -29,6 +35,9 @@ public class GameManagerScript : MonoBehaviour
     private TMPro.TextMeshProUGUI LexaText2;
     private TMPro.TextMeshProUGUI CleeText1;
     private TMPro.TextMeshProUGUI CleeText2;
+
+    // Reference to coin runner minigame manager
+    public MinigameManager coinMinigameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +57,14 @@ public class GameManagerScript : MonoBehaviour
         MusicPlayer.clip = mainTrack;
         MusicPlayer.loop = true;
         MusicPlayer.Play();
+
+        // Set up glitched music player
+        if (GlitchMusicPlayer == null)
+        {
+            GlitchMusicPlayer = gameObject.AddComponent<AudioSource>();
+        }
+        GlitchMusicPlayer.loop = true;
+        GlitchMusicPlayer.mute = true;
 
         //Get the news article text stuff
         ValText1 = GameObject.Find("Val Text 1").GetComponent<TMPro.TextMeshProUGUI>();
@@ -73,7 +90,24 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // coin runner audio control specifically for now
+        if (minigamesPlayed == 1) // add && day == 2
+        {
+            glitchCooldownTimer -= Time.deltaTime;
+
+            // If the cooldown timer reaches 0, check for glitch chance
+            if (glitchCooldownTimer <= 0f)
+            {
+                // Reset the cooldown timer
+                glitchCooldownTimer = glitchCooldown;
+
+                if (!isGlitchActive && Random.value < coinMinigameManager.glitchFreq) // 
+                {
+                    Debug.Log("Starting coin glitch");
+                    StartCoroutine(HandleCoinMinigameAudio());
+                }
+            }
+        }
     }
 
     // Advances the minigame counter and changes the HP bar
@@ -137,21 +171,42 @@ public class GameManagerScript : MonoBehaviour
         {
             //playing cupcake
             MusicPlayer.clip = cupcakeTrack;
-
+           
         }
         else if (minigamesPlayed == 1)
         {
             //playing coin
             MusicPlayer.clip = coinTrack;
+            GlitchMusicPlayer.clip = glitchedCoinTrack;
+            GlitchMusicPlayer.mute = false;
+           
         }
         else
         {
             //playing duck
             MusicPlayer.clip = duckTrack;
+            
         }
         MusicPlayer.Play();
+        GlitchMusicPlayer.Play();
     }
 
+    // Audio glitch handling for coin runner minigame
+    private IEnumerator HandleCoinMinigameAudio()
+    {
+        isGlitchActive = true;
+
+        MusicPlayer.mute = true;
+        GlitchMusicPlayer.mute = false;
+
+        yield return new WaitForSeconds(glitchDuration); // glitch lasts this long (ie 1 second)
+
+        MusicPlayer.mute = false;
+        GlitchMusicPlayer.mute = true;
+
+        isGlitchActive = false;
+
+    }
     //Updates the news articles
     private void UpdateNews()
     {
