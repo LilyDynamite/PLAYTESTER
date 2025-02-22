@@ -80,8 +80,9 @@ public class GameManagerScript : MonoBehaviour
         UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0,0,-2), "This is a popup! It can also be closed");
 
 
-        //Slow down the title screen animation
+        // Slow down the title screen animation, news app captcha button
         GameObject.Find("PlayTesterAnimation").GetComponent<Animator>().speed = 0.5f;
+        GameObject.Find("News App Captcha Button").GetComponent<Animator>().speed = 0.5f;
 
         //Update news articles
         UpdateNews();
