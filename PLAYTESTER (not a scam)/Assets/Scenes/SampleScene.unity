@@ -4429,15 +4429,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc40184528b778c48a66479db104e644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glitchFrequency: 0.5
-  glitchRestTime: 1.5
-  gameDuration: 1
+  gameDuration: 20
   scoreText: {fileID: 320443653}
   scorePoints: 0
   timerText: {fileID: 1894740861}
   timeRemaining: 0
   gamePlaying: 0
   UIController: {fileID: 0}
+  GlitchEffect: {fileID: 519420030}
+  AnalogGlitchEffect: {fileID: 519420033}
+  glitchWaitTime: 1
+  glitchFrequency: 0.5
+  glitchLength: 1
 --- !u!4 &996181061
 Transform:
   m_ObjectHideFlags: 0
