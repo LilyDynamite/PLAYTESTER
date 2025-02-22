@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 // AppScript is on all apps that need to open to a new screen. They contain the place to go to once opened.
@@ -15,11 +16,16 @@ public class AppScript : MonoBehaviour
     public bool canBeClicked;
     public bool isMinigameButton = false; //Special case for the play minigame button
     public bool isClockOutButton = false; //Special case for the clock out button
+    public bool isCaptcha = false;
     private Vector3 cupcakeGameLocation = new Vector3(50, 50, -10);
     private Vector3 coinGameLocation = new Vector3(50, 35, -10);
     private Vector3 duckGameLocation = new Vector3(50, 20, -10);
     private Vector3 EMPLocation = new Vector3(0, -15, -10);
 
+    // Audio
+    public AudioSource sfx;
+    public AudioClip captchaYes;
+    GameObject NewsAppCaptchaButton;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +36,10 @@ public class AppScript : MonoBehaviour
         CupcakeGameManager = GameObject.Find("CupcakeGameManager");
         CoinGameManager = GameObject.Find("MinigameManager");
         DuckGameManager = GameObject.Find("DuckGameManager");
+        NewsAppCaptchaButton = GameObject.Find("News App Captcha Button");
         canBeClicked = true; //true by default
+
+        sfx = NewsAppCaptchaButton.GetComponent<AudioSource>();
 }
 
     // Update is called once per frame
@@ -114,6 +123,10 @@ public class AppScript : MonoBehaviour
             }
             else
             {
+                if (isCaptcha)
+                {
+                    sfx.Play();
+                }
                 // All normal apps will execute this script:
                 UIController.GetComponent<ComputerUIScript>().GoToPosition(myScreenLocation);
             }
