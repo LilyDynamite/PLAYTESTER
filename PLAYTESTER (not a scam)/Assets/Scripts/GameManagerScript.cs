@@ -74,8 +74,6 @@ public class GameManagerScript : MonoBehaviour
         CleeText1 = GameObject.Find("Clee Text 1").GetComponent<TMPro.TextMeshProUGUI>();
         CleeText2 = GameObject.Find("Clee Text 2").GetComponent<TMPro.TextMeshProUGUI>();
 
-
-
         // DEBUG: make a popup appear
         UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0,0,-2), "This is a popup! It can also be closed");
 
@@ -92,7 +90,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         // coin runner audio control specifically for now
-        if (minigamesPlayed == 1) // add && day == 2
+        if (minigamesPlayed == 1 && !coinMinigameManager.IsGameOver()) // add && day == 2
         {
             glitchCooldownTimer -= Time.deltaTime;
 
