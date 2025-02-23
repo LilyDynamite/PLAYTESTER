@@ -6,7 +6,7 @@ using UnityEngine;
 public class CupcakeMovement : MonoBehaviour
 {
     
-    [SerializeField] public float speed = 0.7f;
+    [SerializeField] public float speed = 6f;
     // Audio
     public AudioSource sfx;
     public AudioClip sfxYay;

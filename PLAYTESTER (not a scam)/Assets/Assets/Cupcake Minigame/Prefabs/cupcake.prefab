@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb0f81919000a44c805006573dbabba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.8
+  speed: 6
   sfx: {fileID: -2213437618859810360}
   sfxYay: {fileID: 8300000, guid: afde4557cb2f3a34299d901d08902578, type: 3}
   sfxGlitchedYay: {fileID: 8300000, guid: c5a4d81cf1fa001418cb682554e31e9b, type: 3}

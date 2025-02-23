@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5215108846132524574}
   - component: {fileID: 7723566644173881970}
   - component: {fileID: 4315327164721078242}
+  - component: {fileID: 9142556488042214985}
+  - component: {fileID: 212944759}
   m_Layer: 0
   m_Name: Spawnable
   m_TagString: Untagged
@@ -135,3 +137,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &9142556488042214985
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5215108846132524561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de6e9e0193273a94ba02269b44eb8d4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &212944759
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5215108846132524561}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 5bff6c62c702f854997f1d571ce38747, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 5bff6c62c702f854997f1d571ce38747, type: 2}
+  - {fileID: 7400000, guid: 812863e373996f94695c994aa217f4ee, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
