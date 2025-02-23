@@ -130,7 +130,7 @@ public class CupcakeGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(glitchLength); // Glitch lasts 1 second
         
-        // turn off glitches
+        // turn off glitches unless glitches are supposed to happen 100% 
         if (glitchFrequency != 1)
         {
             isGlitch = false;

@@ -8,8 +8,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject trashPrefab;  
     public Transform[] spawnPoints; // Where to spawn the objects 
     public float spawnInterval = 2f; // Time between spawns
-    public float showInterval = 1f; // Time spawnable will show up for
-    public int spawnablesPerTime = 3; // Number of spawnables that will spawnable each time
+    public float showInterval = 2f; // Time spawnable will show up for
+    public int spawnablesPerTime = 1; // Number of spawnables that will spawnable each time
 
     DuckGameManager duckGameManager;
 
