@@ -31,7 +31,7 @@ public class CupcakeGameManager : MonoBehaviour
 
     // Glitch variables
     public float glitchWaitTime = 1f;
-    public float glitchFrequency = 0.3f;
+    public float glitchFrequency; //
     public float glitchLength = 1f;
     public bool isGlitch = false;
 
@@ -83,10 +83,17 @@ public class CupcakeGameManager : MonoBehaviour
         //set the timer for the game
         timeRemaining = gameDuration;
 
-        //If it is the first time playing, tutorial popup
-        if(timesPlayed == 1)
+        // If it is the first time playing, tutorial popup
+        if (timesPlayed == 1)
         {
+            glitchFrequency = 0;
             UIController.TriggerPopup(new Vector3(50, 50, -5), "Use the arrow keys to move and space to drop.");
+        } else if (timesPlayed == 2)
+        {
+            glitchFrequency = 0.3f;
+        } else // day 3; need a variable to determine which route to take
+        {
+           
         }
 
         // Start glitch checking
