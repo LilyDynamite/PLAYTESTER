@@ -90,7 +90,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         // coin runner audio control specifically for now
-        if (minigamesPlayed == 1 && !coinMinigameManager.IsGameOver() && coinMinigameManager.isGlitch) 
+        if (minigamesPlayed == 1 && !coinMinigameManager.IsGameOver()) // add && day == 2
         {
             glitchCooldownTimer -= Time.deltaTime;
 
@@ -100,7 +100,7 @@ public class GameManagerScript : MonoBehaviour
                 // Reset the cooldown timer
                 glitchCooldownTimer = glitchCooldown;
 
-                if (!isGlitchActive && Random.value < coinMinigameManager.glitchFreq) 
+                if (!isGlitchActive && Random.value < coinMinigameManager.glitchFreq) // 
                 {
                     Debug.Log("Starting coin glitch");
                     StartCoroutine(HandleCoinMinigameAudio());
@@ -177,7 +177,7 @@ public class GameManagerScript : MonoBehaviour
             //playing coin
             MusicPlayer.clip = coinTrack;
             GlitchMusicPlayer.clip = glitchedCoinTrack;
-            GlitchMusicPlayer.mute = true;
+            GlitchMusicPlayer.mute = false;
            
         }
         else

@@ -9,14 +9,13 @@ public class DuckGameManager : MonoBehaviour
     public TMP_Text scoreText;  // Reference to TextMeshPro to show the score
     private int score = 0;
     public bool gameOver;
-    private int timesPlayed;
-    public ComputerUIScript UIController;
+    GameObject UIController;
 
     float timeRemaining;
     public float gameDuration = 30;
 
     // Glitch variables
-    private float glitchFreq;
+    private float glitchFreq = 0.3f;
     private float glitchWaitTime = 1f;
     public bool isGlitch = false;
 
@@ -34,8 +33,7 @@ public class DuckGameManager : MonoBehaviour
         gameOver = true;
         score = 0;
         UpdateScoreText();
-        timesPlayed = 0;
-        UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>();
+        UIController = GameObject.Find("UI Controller");
 
         // SFX
         audioSources = GetComponents<AudioSource>();
@@ -63,22 +61,9 @@ public class DuckGameManager : MonoBehaviour
     {
         gameOver = false;
         score = 0;
-        ++timesPlayed;
         timeRemaining = gameDuration;
 
         StartCoroutine(GlitchCheckRoutine());
-
-        if (timesPlayed == 1)
-        {
-            glitchFreq = 0;
-            UIController.TriggerPopup(new Vector3(48f, 22.5f, -5), "Use the mouse to aim and left click to shoot.Take down all the ducks!");
-        } else if (timesPlayed == 2)
-        {
-            glitchFreq = 0.3f;
-        } else // day 3; need a variable to determine which route to take
-        {
-
-        }
     }
 
     IEnumerator GlitchCheckRoutine()

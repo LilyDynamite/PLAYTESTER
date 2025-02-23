@@ -6,15 +6,14 @@ using Kino;
 
 public class MinigameManager : MonoBehaviour
 {
-    public ComputerUIScript UIController;
+    GameObject UIController;
     GameObject SpawnMg;
     GameObject MainGameManager;
 
     // Manages glitches 
-    public float glitchFreq; // Set based on the day and situation
+    public float glitchFreq = 0.3f; // Set based on the day and situation
     public float glitchWaitTime = 1f;
     public float gameDur = 5f;
-    public bool isGlitch;
 
     // kino effect
     public DigitalGlitch GlitchEffect;
@@ -29,9 +28,6 @@ public class MinigameManager : MonoBehaviour
     public AudioClip normalSFX;
     public AudioClip glitchedSFX;
 
-
-    // General variables
-    private int timesPlayed;
     // bg1, bg2 
     // public SpriteRenderer bg1Renderer;
     // public SpriteRenderer bg2Renderer;
@@ -46,7 +42,7 @@ public class MinigameManager : MonoBehaviour
 
     void Start()
     {
-        UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>(); 
+        UIController = GameObject.Find("UI Controller");
         MainGameManager = GameObject.Find("Game Manager");
         SpawnMg = GameObject.Find("SpawnMg");
 
@@ -58,8 +54,6 @@ public class MinigameManager : MonoBehaviour
 
         isGameOver = true;
         points = 0;
-        timesPlayed = 0;
-        isGlitch = false;
 
     }
 
@@ -72,22 +66,7 @@ public class MinigameManager : MonoBehaviour
         StartCoroutine(StartMinigameTimer());
 
         points = 0;
-        ++timesPlayed;
-
-        //If it is the first time playing, tutorial popup amd no glitches
-        if (timesPlayed == 1)
-        {
-            glitchFreq = 0f;
-            UIController.TriggerPopup(new Vector3(50, 36, -5), "Use the up and down arrows to move lanes. Grab all the gold coins!");
-        } else if (timesPlayed == 2)
-        {
-            glitchFreq = 0.3f;
-        } else // day 3; need a variable to determine which route to take
-        {
-
-        }
-
-
+        
     }
 
     IEnumerator GlitchCheckRoutine()
@@ -106,7 +85,6 @@ public class MinigameManager : MonoBehaviour
     IEnumerator ActivateGlitch()
     {
         // Apply glitch effects
-        isGlitch = true;
         // Kino effect
         GlitchEffect.intensity = Random.Range(0f, 0.3f); // can adjust
         AnalogGlitchEffect.colorDrift = Random.Range(0f, 0.3f);
@@ -119,7 +97,6 @@ public class MinigameManager : MonoBehaviour
         // Revert to normal if the glitch frequency isn't 100%
         if (glitchFreq != 1)
         {
-           isGlitch = false;
            playerRenderer.color = normalPlayerColor;
            sfx.clip = normalSFX;
            GlitchEffect.intensity = 0;
