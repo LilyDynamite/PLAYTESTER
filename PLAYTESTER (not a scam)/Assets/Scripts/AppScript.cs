@@ -75,7 +75,7 @@ public class AppScript : MonoBehaviour
                         //We should do the EMP scene instead since it's day 2 and we haven't done it yet
                         GameManager.GetComponent<GameManagerScript>().EMPHappened = true;
                         UIController.GetComponent<ComputerUIScript>().GoToPosition(EMPLocation);
-
+                        GameManager.GetComponent<GameManagerScript>().UpdateNews();
 
                     }
                     else

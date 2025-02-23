@@ -4441,6 +4441,10 @@ MonoBehaviour:
   glitchWaitTime: 1
   glitchFrequency: 0.5
   glitchLength: 1
+  isGlitch: 0
+  bg: {fileID: 1250666813}
+  bgNormal: {fileID: 21300000, guid: c780591c38cf582419c990e670a2677e, type: 3}
+  bgGlitched: {fileID: 21300000, guid: 30d79089f5cf9ce43a1ea1412c2babef, type: 3}
 --- !u!4 &996181061
 Transform:
   m_ObjectHideFlags: 0
@@ -11294,15 +11298,15 @@ SpriteRenderer:
   m_SortingLayerID: 1939846377
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4fc924be613423d409e96b8df3eba49b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c780591c38cf582419c990e670a2677e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.4, y: 3.6}
+  m_Size: {x: 3.2, y: 1.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1961513232
@@ -11984,6 +11988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cupcake: {fileID: 8662074612052584715, guid: dcc6995cab8a1b74eaa30ad4c5ab33e7, type: 3}
+  bomb: {fileID: 8887735693401374855, guid: 4c708fbb42c50ac46a2e31a7c34c2474, type: 3}
   speed: 5
   playCupcakeMinigame: 0
 --- !u!4 &2033651213

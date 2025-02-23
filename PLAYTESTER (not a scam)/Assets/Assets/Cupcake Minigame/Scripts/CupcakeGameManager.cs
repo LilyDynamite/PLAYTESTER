@@ -30,6 +30,12 @@ public class CupcakeGameManager : MonoBehaviour
     public float glitchWaitTime = 1f;
     public float glitchFrequency = 0.3f;
     public float glitchLength = 1f;
+    public bool isGlitch = false;
+
+    // Background variables
+    public GameObject bg;
+    public Sprite bgNormal;
+    public Sprite bgGlitched;
 
     //glitches - through frequency will show glitches 
     //have problem i dont know how to add the prefab sprite renderer :(
@@ -45,6 +51,7 @@ public class CupcakeGameManager : MonoBehaviour
         timesPlayed = 0;
 
         UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>();
+        
     }
 
     //This is the function that will be called by the AppScript script. It should contain
@@ -115,15 +122,21 @@ public class CupcakeGameManager : MonoBehaviour
 
     IEnumerator ActivateGlitch()
     {
+        isGlitch = true;
         GlitchEffect.intensity = Random.Range(0f, 0.3f); // can adjust
         AnalogGlitchEffect.colorDrift = Random.Range(0f, 0.3f);
-        yield return new WaitForSeconds(glitchLength); // Glitch lasts 1 second
+        SpriteRenderer spriteRenderer = bg.GetComponent<SpriteRenderer>(); // initialize to change background
+        spriteRenderer.sprite = bgGlitched;
 
+        yield return new WaitForSeconds(glitchLength); // Glitch lasts 1 second
+        
         // turn off glitches
         if (glitchFrequency != 1)
         {
+            isGlitch = false;
             GlitchEffect.intensity = 0;
             AnalogGlitchEffect.colorDrift = 0;
+            spriteRenderer.sprite = bgNormal;
         } 
     }
 
