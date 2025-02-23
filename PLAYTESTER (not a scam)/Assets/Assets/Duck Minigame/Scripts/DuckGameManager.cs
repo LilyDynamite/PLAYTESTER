@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Kino;
 
 public class DuckGameManager : MonoBehaviour
 {
@@ -13,13 +14,32 @@ public class DuckGameManager : MonoBehaviour
     float timeRemaining;
     public float gameDuration = 30;
 
+    // Glitch variables
+    private float glitchFreq = 0.3f;
+    private float glitchWaitTime = 1f;
+    public bool isGlitch = false;
+
+    // kino effect
+    public DigitalGlitch GlitchEffect;
+    public AnalogGlitch AnalogGlitchEffect;
+
+    // Audio management
+    public AudioSource[] audioSources;
+    public AudioClip normalSFX;
+    public AudioClip glitchedSFX;
+
     void Start()
     {
         gameOver = true;
         score = 0;
         UpdateScoreText();
         UIController = GameObject.Find("UI Controller");
-       
+
+        // SFX
+        audioSources = GetComponents<AudioSource>();
+        audioSources[0].clip = normalSFX;
+//      failureSFX = GetComponent<AudioSource>();
+ //     failureSFX.clip = failureClipSFX;
     }
 
     void Update()
@@ -32,6 +52,7 @@ public class DuckGameManager : MonoBehaviour
             {
                 GameOver();
             }
+
         }
     }
 
@@ -41,8 +62,44 @@ public class DuckGameManager : MonoBehaviour
         gameOver = false;
         score = 0;
         timeRemaining = gameDuration;
+
+        StartCoroutine(GlitchCheckRoutine());
     }
 
+    IEnumerator GlitchCheckRoutine()
+    {
+        while (!gameOver)
+        {
+            yield return new WaitForSeconds(glitchWaitTime); // Check every second
+
+            if (glitchFreq > 0 && Random.value < glitchFreq) // If we get a random value less than the glitch frequency, the glitches will occur
+            {
+                StartCoroutine(ActivateGlitch());
+            }
+        }
+    }
+
+    IEnumerator ActivateGlitch()
+    {
+        // Apply glitch effects
+        isGlitch = true;
+        // Kino effect
+        GlitchEffect.intensity = Random.Range(0f, 0.3f); // can adjust
+        AnalogGlitchEffect.colorDrift = Random.Range(0f, 0.3f);
+        audioSources[0].clip = glitchedSFX;
+
+        yield return new WaitForSeconds(1f); // Glitch lasts 1 second
+
+        // Revert to normal if the glitch frequency isn't 100%
+        if (glitchFreq != 1)
+        {
+            isGlitch = false;
+            audioSources[0].clip = normalSFX;
+            GlitchEffect.intensity = 0;
+            AnalogGlitchEffect.colorDrift = 0;
+        }
+
+    }
     public void GameOver()
     {
         gameOver = true;

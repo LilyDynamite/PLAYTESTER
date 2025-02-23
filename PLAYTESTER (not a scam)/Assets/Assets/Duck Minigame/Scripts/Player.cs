@@ -8,9 +8,15 @@ public class Player : MonoBehaviour
     public LayerMask interactableLayer;
     public DuckGameManager duckGameManager;
 
+    //public AudioSource sfx;  // Not affected by glitches, so separate audio source used here
+    //public AudioClip failureSFX;
+    //public AudioClip shootSFX;
+
     void Start()
     {
         duckGameManager = GameObject.Find("DuckGameManager").GetComponent<DuckGameManager>();
+
+        //sfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,9 @@ public class Player : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0)) // Left click
             {
+                //sfx.clip = shootSFX;
+                //sfx.Play();
+                duckGameManager.audioSources[2].Play();
                 DetectObjectUnderCrosshair(mousePos);
             }
         }
@@ -39,14 +48,20 @@ public class Player : MonoBehaviour
                 // Add 1 point for duck
                 duckGameManager.AddPoints(1);
                 Debug.Log("Hit Duck +1 Point");
+                duckGameManager.audioSources[0].Play();
                 Destroy(hit.gameObject); // Destroy duck after hit
+                
             }
             else if (hit.CompareTag("Trash"))
             {
                 // Subtract 1 point for trash
                 duckGameManager.AddPoints(-1);
                 Debug.Log("Hit Trash -1 Point");
+                //sfx.clip = failureSFX;
+                //sfx.Play();
+                duckGameManager.audioSources[1].Play();
                 Destroy(hit.gameObject); // Destroy trash after hit
+
             }
         }
     }

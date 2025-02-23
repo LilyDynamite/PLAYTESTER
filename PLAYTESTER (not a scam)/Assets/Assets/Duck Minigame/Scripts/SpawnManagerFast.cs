@@ -7,9 +7,9 @@ public class SpawnManagerFast : MonoBehaviour
     public GameObject duckPrefab;
     public GameObject trashPrefab;
     public Transform[] spawnPoints; // Where to spawn the objects
-    public float spawnInterval = 3f; // Time between spawns
-    public float showInterval = 0.75f; // Time spawnable will show up for
-    public int spawnablesPerTime = 3; // Number of spawnables that will spawnable each time
+    public float spawnInterval = 1f; // Time between spawns
+    public float showInterval = 1f; // Time spawnable will show up for
+    public int spawnablesPerTime = 1; // Number of spawnables that will spawnable each time
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class SpawnManagerFast : MonoBehaviour
                 usedIndexes.Add(index);
                 Transform spawnPoint = spawnPoints[index];
 
-                bool isDuck = Random.value > 0.75f;  // 25% chance to spawn a duck
+                bool isDuck = Random.value > 0.50;  // 50% chance to spawn a duck
 
                 if (isDuck)
                 {
