@@ -51,17 +51,27 @@ public class spawnMg : MonoBehaviour
 
         SpriteRenderer spriteRenderer = newSpawnable.GetComponent<SpriteRenderer>(); // Access the spawnable's color
         // spriteRenderer.color = color; // Change the spawnable's color
-        
+        Animator anim = newSpawnable.GetComponent<Animator>();
+
         if (coinSprite != null)
         {
             spriteRenderer.sprite = coinSprite;
             newSpawnable.tag = "Coin";
             Debug.Log("Spawned a Coin with tag: " + newSpawnable.tag); // Debugging
+            if (anim != null)
+            {
+                
+                anim.Play("GoodCoinAnimation"); // 
+            }
         } else if (evilCoinSprite != null)
         {
             spriteRenderer.sprite = evilCoinSprite;
             newSpawnable.tag = "EvilCoin";
             Debug.Log("Spawned an Evil Coin with tag: " + newSpawnable.tag); // Debugging
+            if (anim != null)
+            {
+                anim.Play("EvilCoinAnimation"); 
+            }
         }
     }
 }
