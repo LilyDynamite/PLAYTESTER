@@ -13,19 +13,22 @@ public class AppScript : MonoBehaviour
     GameObject CupcakeGameManager;
     GameObject CoinGameManager;
     GameObject DuckGameManager;
+    GameObject NewsAppCaptchaButton;
+    GameObject StartButton;
     public bool canBeClicked;
     public bool isMinigameButton = false; //Special case for the play minigame button
     public bool isClockOutButton = false; //Special case for the clock out button
-    public bool isCaptcha = false;
+    public bool isCaptchaButton = false;
+    public bool isStartButton = false;
     private Vector3 cupcakeGameLocation = new Vector3(50, 50, -10);
     private Vector3 coinGameLocation = new Vector3(50, 35, -10);
     private Vector3 duckGameLocation = new Vector3(50, 20, -10);
     private Vector3 EMPLocation = new Vector3(0, -15, -10);
 
     // Audio
-    public AudioSource sfx;
-    public AudioClip captchaYes;
-    GameObject NewsAppCaptchaButton;
+    public AudioSource captchaSFX; // sfx for captcha confirmation
+    public AudioSource clickSFX; // sfx for start button click
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +40,9 @@ public class AppScript : MonoBehaviour
         CoinGameManager = GameObject.Find("MinigameManager");
         DuckGameManager = GameObject.Find("DuckGameManager");
         NewsAppCaptchaButton = GameObject.Find("News App Captcha Button");
+        StartButton = GameObject.Find("Start Button");
         canBeClicked = true; //true by default
-
-        sfx = NewsAppCaptchaButton.GetComponent<AudioSource>();
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -73,7 +75,7 @@ public class AppScript : MonoBehaviour
                         //We should do the EMP scene instead since it's day 2 and we haven't done it yet
                         GameManager.GetComponent<GameManagerScript>().EMPHappened = true;
                         UIController.GetComponent<ComputerUIScript>().GoToPosition(EMPLocation);
-
+                        GameManager.GetComponent<GameManagerScript>().UpdateNews();
 
                     }
                     else
@@ -123,9 +125,13 @@ public class AppScript : MonoBehaviour
             }
             else
             {
-                if (isCaptcha)
+                if (isCaptchaButton)
                 {
-                    sfx.Play();
+                    captchaSFX.Play();
+                }
+                else if (isStartButton)
+                {
+                    clickSFX.Play();
                 }
                 // All normal apps will execute this script:
                 UIController.GetComponent<ComputerUIScript>().GoToPosition(myScreenLocation);

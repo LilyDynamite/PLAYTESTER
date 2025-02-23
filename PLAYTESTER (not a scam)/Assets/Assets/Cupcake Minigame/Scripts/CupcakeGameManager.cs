@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Kino;
 
 public class CupcakeGameManager : MonoBehaviour
 {
-    //glitch??
-    public float glitchFrequency = 0.5f;
-    public float glitchRestTime = 1.5f;
-
     public float gameDuration = 30f;
 
     public TMP_Text scoreText;
@@ -25,6 +22,21 @@ public class CupcakeGameManager : MonoBehaviour
 
     public ComputerUIScript UIController;
 
+    // Kino effect
+    public DigitalGlitch GlitchEffect;
+    public AnalogGlitch AnalogGlitchEffect;
+
+    // Glitch variables
+    public float glitchWaitTime = 1f;
+    public float glitchFrequency = 0.3f;
+    public float glitchLength = 1f;
+    public bool isGlitch = false;
+
+    // Background variables
+    public GameObject bg;
+    public Sprite bgNormal;
+    public Sprite bgGlitched;
+
     //glitches - through frequency will show glitches 
     //have problem i dont know how to add the prefab sprite renderer :(
     // public SpriteRenderer cupcakeRenderer;
@@ -39,6 +51,7 @@ public class CupcakeGameManager : MonoBehaviour
         timesPlayed = 0;
 
         UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>();
+        
     }
 
     //This is the function that will be called by the AppScript script. It should contain
@@ -72,6 +85,8 @@ public class CupcakeGameManager : MonoBehaviour
             UIController.TriggerPopup(new Vector3(50, 50, -5), "Use the arrow keys to move and space to drop.");
         }
 
+        // Start glitch checking
+        StartCoroutine(GlitchCheckRoutine());
     }
 
     // Update is called once per frame
@@ -90,6 +105,39 @@ public class CupcakeGameManager : MonoBehaviour
         }
 
 
+    }
+
+    IEnumerator GlitchCheckRoutine()
+    {
+        while (!gameOver)
+        {
+            yield return new WaitForSeconds(glitchWaitTime);  // ie check every second
+
+            if (glitchFrequency > 0 && Random.value < glitchFrequency)
+            {
+                StartCoroutine(ActivateGlitch());
+            }
+        }
+    }
+
+    IEnumerator ActivateGlitch()
+    {
+        isGlitch = true;
+        GlitchEffect.intensity = Random.Range(0f, 0.3f); // can adjust
+        AnalogGlitchEffect.colorDrift = Random.Range(0f, 0.3f);
+        SpriteRenderer spriteRenderer = bg.GetComponent<SpriteRenderer>(); // initialize to change background
+        spriteRenderer.sprite = bgGlitched;
+
+        yield return new WaitForSeconds(glitchLength); // Glitch lasts 1 second
+        
+        // turn off glitches
+        if (glitchFrequency != 1)
+        {
+            isGlitch = false;
+            GlitchEffect.intensity = 0;
+            AnalogGlitchEffect.colorDrift = 0;
+            spriteRenderer.sprite = bgNormal;
+        } 
     }
 
     private void GameOver()

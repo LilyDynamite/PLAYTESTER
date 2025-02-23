@@ -74,8 +74,6 @@ public class GameManagerScript : MonoBehaviour
         CleeText1 = GameObject.Find("Clee Text 1").GetComponent<TMPro.TextMeshProUGUI>();
         CleeText2 = GameObject.Find("Clee Text 2").GetComponent<TMPro.TextMeshProUGUI>();
 
-
-
         // DEBUG: make a popup appear
         UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0,0,-2), "This is a popup! It can also be closed");
 
@@ -92,7 +90,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         // coin runner audio control specifically for now
-        if (minigamesPlayed == 1) // add && day == 2
+        if (minigamesPlayed == 1 && !coinMinigameManager.IsGameOver()) // add && day == 2
         {
             glitchCooldownTimer -= Time.deltaTime;
 
@@ -209,7 +207,7 @@ public class GameManagerScript : MonoBehaviour
 
     }
     //Updates the news articles
-    private void UpdateNews()
+    public void UpdateNews()
     {
         //check what day it is, HP, how many mingames have been played, etc, and
         //put in all the needed articles
@@ -223,15 +221,18 @@ public class GameManagerScript : MonoBehaviour
         }
         else if (day == 2)
         {
-            if(EMPHappened)
+            if(!EMPHappened)
             {
                 //Display day 2 before emp articles
+                ValText1.SetText("This is still tester text.\nWow a new line!");
+                ValText2.SetText("Yay I love day 2 and I still love my wife");
             }
             else
             {
-            
+                // FIXME: Not being updated!!
                 //Display day 2 after emp articles
-            
+                ValText1.SetText("This is still tester text.\nWow a new line! \nOh no the EMP happened");
+
             }
         }
         else

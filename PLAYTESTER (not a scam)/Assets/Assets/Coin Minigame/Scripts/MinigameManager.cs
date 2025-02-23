@@ -33,7 +33,7 @@ public class MinigameManager : MonoBehaviour
     // public SpriteRenderer bg2Renderer;
     // Good spawnable
   
-    // For now, just player color will change
+    // player color can change
     public SpriteRenderer playerRenderer;
     public Color glitchPlayerColor = new Color(0f, 0f, 0f, 1f); // Black
     private Color normalPlayerColor;
@@ -93,17 +93,17 @@ public class MinigameManager : MonoBehaviour
         sfx.clip = glitchedSFX;
 
         yield return new WaitForSeconds(1f); // Glitch lasts 1 second
-        GlitchEffect.intensity = 0;
-        AnalogGlitchEffect.colorDrift = 0;
-
-
+        
         // Revert to normal if the glitch frequency isn't 100%
         if (glitchFreq != 1)
         {
            playerRenderer.color = normalPlayerColor;
            sfx.clip = normalSFX;
+           GlitchEffect.intensity = 0;
+           AnalogGlitchEffect.colorDrift = 0;
+
         }
-      
+
     }
 
     IEnumerator StartMinigameTimer()

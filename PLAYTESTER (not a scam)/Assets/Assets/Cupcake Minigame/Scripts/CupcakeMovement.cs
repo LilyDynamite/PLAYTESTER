@@ -7,7 +7,10 @@ public class CupcakeMovement : MonoBehaviour
 {
     
     [SerializeField] public float speed = 0.7f;
-    private AudioSource sfxYay;
+    // Audio
+    public AudioSource sfx;
+    public AudioClip sfxYay;
+    public AudioClip sfxGlitchedYay;
     //I cant for some reason put the timer in the text idk if it is because it is a prefab or im dumb 
     //public TMP_Text scoreText; //score text
     //public int scorePoints=0;
@@ -18,12 +21,12 @@ public class CupcakeMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     void Awake() 
     {
-        sfxYay = GetComponent<AudioSource>();
+        sfx = GetComponent<AudioSource>();
         GameManager = GameObject.Find("CupcakeGameManager").GetComponent<CupcakeGameManager>();
     }
 
@@ -43,7 +46,15 @@ public class CupcakeMovement : MonoBehaviour
         {
             if (sfxYay != null)
             {
-                sfxYay.Play();
+                if (!GameManager.isGlitch)
+                {
+                    sfx.clip = sfxYay;
+                    sfx.Play();
+                } else // means the glitch is occuring
+                {
+                    sfx.clip = sfxGlitchedYay;
+                    sfx.Play();
+                }
             }
             GameManager.AddPoints(1);
             

@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public GameObject cupcake;
+    public GameObject bomb;
     public float speed = 1.85f;
     private float waitTime = 0.0f;
     public bool playCupcakeMinigame; //turned to true by the cupcake game manager script
