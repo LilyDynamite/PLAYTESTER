@@ -259,4 +259,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cupcakePrefab: {fileID: 8662074612052584715}
   cupcake: {fileID: 21300000, guid: 39b8854fa11fc5d489a7915635d24e7d, type: 3}
-  bomb: {fileID: 21300000, guid: d8ca9c87d9ee063429ddcccdda2e2173, type: 3}
+  bomb: {fileID: 21300000, guid: 7c5d9bcacf5a15e4db98107bf3b1341b, type: 3}
