@@ -11,6 +11,8 @@ public class CupcakeGameManager : MonoBehaviour
     public TMP_Text scoreText;
     public int scorePoints;
 
+    //int currentDay;
+
     //timer text
     public TMP_Text timerText;
     public float timeRemaining = 0;
@@ -21,6 +23,7 @@ public class CupcakeGameManager : MonoBehaviour
     private int timesPlayed;
 
     public ComputerUIScript UIController;
+    GameObject MainGameManager;
 
     // Kino effect
     public DigitalGlitch GlitchEffect;
@@ -51,7 +54,8 @@ public class CupcakeGameManager : MonoBehaviour
         timesPlayed = 0;
 
         UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>();
-        
+        //MainGameManager = GameObject.Find("Game Manager");
+       
     }
 
     //This is the function that will be called by the AppScript script. It should contain
