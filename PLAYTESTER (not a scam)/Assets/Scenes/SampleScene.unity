@@ -7895,7 +7895,7 @@ GameObject:
   - component: {fileID: 1545497555}
   m_Layer: 0
   m_Name: LBoundary
-  m_TagString: Boundary
+  m_TagString: LBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9452,7 +9452,7 @@ GameObject:
   - component: {fileID: 1688868921}
   m_Layer: 0
   m_Name: RBoundary
-  m_TagString: Boundary
+  m_TagString: RBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

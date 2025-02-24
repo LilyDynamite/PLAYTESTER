@@ -6,12 +6,13 @@ TagManager:
   tags:
   - spawnable
   - Ground
-  - Boundary
   - Person
   - Duck
   - Trash
   - Coin
   - EvilCoin
+  - LBoundary
+  - RBoundary
   layers:
   - Default
   - TransparentFX
