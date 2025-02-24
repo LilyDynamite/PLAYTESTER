@@ -87,7 +87,7 @@ public class CupcakeGameManager : MonoBehaviour
         if (timesPlayed == 1)
         {
             glitchFrequency = 0;
-            UIController.TriggerPopup(new Vector3(50, 50, -5), "Use the arrow keys to move and space to drop.");
+            UIController.TriggerPopup(new Vector3(50, 50, -5), "Use the left and right arrow keys to move and spacebar to drop.\r\nGive cupcakes to everyone!\r\n");
         } else if (timesPlayed == 2)
         {
             glitchFrequency = 0.3f;

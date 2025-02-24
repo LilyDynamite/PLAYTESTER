@@ -23,7 +23,6 @@ public class AppScript : MonoBehaviour
     private Vector3 cupcakeGameLocation = new Vector3(50, 50, -10);
     private Vector3 coinGameLocation = new Vector3(50, 35, -10);
     private Vector3 duckGameLocation = new Vector3(50, 20, -10);
-    private Vector3 EMPLocation = new Vector3(0, -15, -10);
 
     // Audio
     public AudioSource captchaSFX; // sfx for captcha confirmation
@@ -73,14 +72,15 @@ public class AppScript : MonoBehaviour
                     if (GameManager.GetComponent<GameManagerScript>().GetDay() == 2 && GameManager.GetComponent<GameManagerScript>().EMPHappened == false)
                     {
                         //We should do the EMP scene instead since it's day 2 and we haven't done it yet
-                        GameManager.GetComponent<GameManagerScript>().EMPHappened = true;
-                        UIController.GetComponent<ComputerUIScript>().GoToPosition(EMPLocation);
-                        GameManager.GetComponent<GameManagerScript>().UpdateNews();
+                        GameManager.GetComponent<GameManagerScript>().StartEMP();
 
                     }
                     else
                     {
                         //Go into the cupcake game as normal
+
+                        //Tell the game manager we are in a game
+                        GameManager.GetComponent<GameManagerScript>().StartedMinigame();
 
                         UIController.GetComponent<ComputerUIScript>().GoToPosition(cupcakeGameLocation);
                         Debug.Log("In Cupcake Minigame");
@@ -92,6 +92,10 @@ public class AppScript : MonoBehaviour
                 else if (gamesPlayed == 1)
                 {
                     //PLAY THE COIN RUNNER GAME
+
+                    //Tell the game manager we are in a game
+                    GameManager.GetComponent<GameManagerScript>().StartedMinigame();
+
                     UIController.GetComponent<ComputerUIScript>().GoToPosition(coinGameLocation);
                     //trigger the start of the coin minigame
                     CoinGameManager.GetComponent<MinigameManager>().StartCoinMinigame();
@@ -99,6 +103,10 @@ public class AppScript : MonoBehaviour
                 else
                 {
                     //PLAY THE DUCK GAME
+
+                    //Tell the game manager we are in a game
+                    GameManager.GetComponent<GameManagerScript>().StartedMinigame();
+
                     UIController.GetComponent<ComputerUIScript>().GoToPosition(duckGameLocation);
                     //trigger the start of the duck minigame
                     DuckGameManager.GetComponent<DuckGameManager>().StartDuckMinigame();
