@@ -143,6 +143,7 @@ public class AppScript : MonoBehaviour
                 }
                 // All normal apps will execute this script:
                 UIController.GetComponent<ComputerUIScript>().GoToPosition(myScreenLocation);
+                
             }
             
         }
@@ -152,6 +153,16 @@ public class AppScript : MonoBehaviour
             //TODO: We can add an popup here specific to the clock out button that tells the 
             //player they haven't completed all the minigames yet, or if its the minigame button
             //we can tell the player they've already completed the minigames for the day
+
+            if(isClockOutButton)
+            {
+                UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0, 0, -2), "Complete all three minigames before clocking out!");
+
+            }
+            else if(isMinigameButton)
+            {
+                UIController.GetComponent<ComputerUIScript>().TriggerPopup(new Vector3(0, 0, -2), "Great work, employee! You can clock out now, you've finished all the minigames today!");
+            }
         }
     }
 
