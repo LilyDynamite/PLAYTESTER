@@ -5035,6 +5035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996181061}
   - component: {fileID: 996181060}
+  - component: {fileID: 996181062}
   m_Layer: 0
   m_Name: CupcakeGameManager
   m_TagString: Untagged
@@ -5054,7 +5055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc40184528b778c48a66479db104e644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 10
+  gameDuration: 5
   scoreText: {fileID: 320443653}
   scorePoints: 0
   timerText: {fileID: 1894740861}
@@ -5070,6 +5071,9 @@ MonoBehaviour:
   bg: {fileID: 1250666813}
   bgNormal: {fileID: 21300000, guid: c780591c38cf582419c990e670a2677e, type: 3}
   bgGlitched: {fileID: 21300000, guid: 30d79089f5cf9ce43a1ea1412c2babef, type: 3}
+  sfx: {fileID: 996181062}
+  sfxNormalYay: {fileID: 8300000, guid: afde4557cb2f3a34299d901d08902578, type: 3}
+  sfxGlitchedYay: {fileID: 8300000, guid: c5a4d81cf1fa001418cb682554e31e9b, type: 3}
 --- !u!4 &996181061
 Transform:
   m_ObjectHideFlags: 0
@@ -5084,6 +5088,102 @@ Transform:
   m_Father: {fileID: 1294802981}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &996181062
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996181059}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.497
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1008427762
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,7 +8320,6 @@ MonoBehaviour:
   - {fileID: 1743122962}
   - {fileID: 856263250}
   - {fileID: 1755187668}
-  pointsText: {fileID: 1310706691}
 --- !u!4 &1455379866
 Transform:
   m_ObjectHideFlags: 0
@@ -11186,12 +11285,13 @@ MonoBehaviour:
   GlitchEffect: {fileID: 519420030}
   AnalogGlitchEffect: {fileID: 519420033}
   timerText: {fileID: 1396497652}
+  scoreText: {fileID: 1310706691}
+  points: 0
   sfx: {fileID: 1745545159}
   normalSFX: {fileID: 8300000, guid: cd9f7f66f72a4f4448e3395fba39c777, type: 3}
   glitchedSFX: {fileID: 8300000, guid: 76d3be4b7c97dc8468a84962da56d030, type: 3}
   playerRenderer: {fileID: 1455379864}
   glitchPlayerColor: {r: 0, g: 0, b: 0, a: 1}
-  points: 0
 --- !u!224 &1745545158
 RectTransform:
   m_ObjectHideFlags: 0

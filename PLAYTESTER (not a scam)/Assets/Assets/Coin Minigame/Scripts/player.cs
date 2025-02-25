@@ -9,8 +9,8 @@ public class player : MonoBehaviour
 {
     public Transform[] lanes;
     private int curLane = 1; // middle lane
-    public TMP_Text pointsText;
-    private int points = 0;
+    //public TMP_Text pointsText;
+    //private int points = 0;
 
     // UnityEngine.Color colorOne = new UnityEngine.Color(1f, 1f, 0f, 1f); // yellow
     // UnityEngine.Color colorTwo = new UnityEngine.Color(0.5f, 0f, 0.5f, 1f); // purple

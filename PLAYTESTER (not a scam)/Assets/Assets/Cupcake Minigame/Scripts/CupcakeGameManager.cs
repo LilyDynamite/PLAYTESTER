@@ -40,13 +40,10 @@ public class CupcakeGameManager : MonoBehaviour
     public Sprite bgNormal;
     public Sprite bgGlitched;
 
-    //glitches - through frequency will show glitches 
-    //have problem i dont know how to add the prefab sprite renderer :(
-    // public SpriteRenderer cupcakeRenderer;
-    //public Color glitchColor = new Color(255f, 0f, 0f, 1f); // aMgenta
-    //private Color normalcupcakeColor;
-    //public GameObject prefabCupcake;
-
+    //sound effect
+    public AudioSource sfx;
+    public AudioClip sfxNormalYay;
+    public AudioClip sfxGlitchedYay;
 
     void Start()
     {
@@ -55,6 +52,7 @@ public class CupcakeGameManager : MonoBehaviour
 
         UIController = GameObject.Find("UI Controller").GetComponent<ComputerUIScript>();
         //MainGameManager = GameObject.Find("Game Manager");
+        sfx=GetComponent<AudioSource>();
        
     }
 
@@ -181,6 +179,18 @@ public class CupcakeGameManager : MonoBehaviour
     public void AddPoints(int points) { 
         scorePoints+=points;
         UpdateScoreText();
+    }
+   
+    public void SfxCupcakeHit(bool isGlitch) {
+        if (isGlitch) //plays sfx depending if glitches are happening or not
+        {
+            sfx.clip = sfxGlitchedYay;
+            sfx.Play();
+        }
+        else { 
+            sfx.clip = sfxNormalYay;
+            sfx.Play();
+        }
     }
 
 

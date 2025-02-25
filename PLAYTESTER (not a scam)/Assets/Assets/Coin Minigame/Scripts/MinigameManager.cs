@@ -24,6 +24,10 @@ public class MinigameManager : MonoBehaviour
     public TMP_Text timerText;
     private bool isGameOver;
 
+    //Score management
+    public TMP_Text scoreText;
+    public int points;
+
     // Audio management
     public AudioSource sfx;
     public AudioClip normalSFX;
@@ -42,7 +46,7 @@ public class MinigameManager : MonoBehaviour
     public Color glitchPlayerColor = new Color(0f, 0f, 0f, 1f); // Black
     private Color normalPlayerColor;
 
-    public int points;
+    
 
     void Start()
     {
@@ -168,6 +172,12 @@ public class MinigameManager : MonoBehaviour
     public void AddPoints(int point)
     {
         points += point;
+        UpdateScore();
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = "Points: "+points.ToString();
     }
     
 

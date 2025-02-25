@@ -8,13 +8,6 @@ public class CupcakeMovement : MonoBehaviour
     
     [SerializeField] public float speed = 6f;
     // Audio
-    public AudioSource sfx;
-    public AudioClip sfxYay;
-    public AudioClip sfxGlitchedYay;
-    public bool hasHitPerson = false;
-    //I cant for some reason put the timer in the text idk if it is because it is a prefab or im dumb 
-    //public TMP_Text scoreText; //score text
-    //public int scorePoints=0;
 
     private CupcakeGameManager GameManager;
 
@@ -27,7 +20,6 @@ public class CupcakeMovement : MonoBehaviour
 
     void Awake() 
     {
-        sfx = GetComponent<AudioSource>();
         GameManager = GameObject.Find("CupcakeGameManager").GetComponent<CupcakeGameManager>();
     }
 
@@ -45,27 +37,26 @@ public class CupcakeMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Person")
         {
+            GameManager.SfxCupcakeHit(GameManager.isGlitch); //plays yay sfx through game manager
+            /* Do sfx through the minigame manager instead
             if (sfxYay != null)
             {
                 if (!GameManager.isGlitch)
                 {
                     sfx.clip = sfxYay;
                     sfx.Play();
-                    hasHitPerson = true;
                 } else // means the glitch is occuring
                 {
                     sfx.clip = sfxGlitchedYay;
                     sfx.Play();
-                    hasHitPerson = true;
                 }
-            }
+            }*/
             GameManager.AddPoints(1);
             
             //decrease total enemies on screen
             GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().KilledEnemy();
             Destroy(collision.gameObject);
-            //Destroy(gameObject);
-            //DestroyCupcake(hasHitPerson);
+            Destroy(gameObject);
 
             
         }  
