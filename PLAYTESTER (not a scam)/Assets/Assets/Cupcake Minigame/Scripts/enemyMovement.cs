@@ -8,6 +8,16 @@ public class enemyMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float minSpeed;
 
+    //color choice
+    [SerializeField] Color color1= new Color(0f,32f,101f,1f);
+    [SerializeField] private Color color2;
+    [SerializeField] private Color color3;
+    [SerializeField] private Color color4;
+    [SerializeField] private Color color5;
+    [SerializeField] private Color color6;
+    [SerializeField] private Color color7;
+    private int colorChoice;
+
     SpriteRenderer spriteRenderer;
  
     // Start is called before the first frame update
@@ -15,6 +25,7 @@ public class enemyMovement : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         speed=Random.Range(minSpeed,maxSpeed); //randomize speed of people
+        SetPersonColor();
   
     }
 
@@ -39,6 +50,41 @@ public class enemyMovement : MonoBehaviour
             speed *= -1;
             spriteRenderer.flipX = true;
 
+        }
+    }
+
+    private void SetPersonColor()
+    {  //set each person to diff color
+        colorChoice = Random.Range(0, 8); //randomize index of choice
+        switch (colorChoice)
+        {
+            case 0:
+                spriteRenderer.color = color1;
+                break;
+            case 1:
+                spriteRenderer.color = color2;
+                break;
+            case 2:
+                spriteRenderer.color = color3;
+                break;
+            case 3:
+                spriteRenderer.color = color4;
+                break;
+            case 4:
+                spriteRenderer.color = color5;
+                break;
+            case 5:
+                spriteRenderer.color = color6;
+                break;
+            case 6:
+                spriteRenderer.color = color7;
+                break;
+            case 7:
+                spriteRenderer.color = Color.white;
+                break;
+            default:
+                spriteRenderer.color = Color.red;
+                break;
         }
     }
 }
